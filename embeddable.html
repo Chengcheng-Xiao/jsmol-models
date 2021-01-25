@@ -182,6 +182,8 @@ function setProperty(name, value) {
           $('#overlay').show();
         }
         return;
+    case 'supercell':
+      execJsmolScript(appletId, "load '' " + '{'+value.split(",").join(" ")+'}');
     default:
       execJsmolScript(appletId, 'set ' + propName + ' ' + value);
   }
