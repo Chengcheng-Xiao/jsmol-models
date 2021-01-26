@@ -34,14 +34,40 @@ If you are developing Lab at the same moment, you may want to run server on diff
 
     bin/rackup -p 9191
     open http://localhost:9191/embeddable.html
-    
+
 The embeddable page doesn't load any model by default. However you provide a special parameter in URL to load desired model:
 
     http://localhost:9191/embeddable.html#molecule=<path-to-molecule-file>
-    
+
 e.g.:
 
     http://localhost:9191/embeddable.html#molecule=models/dna/dna1.pdb
+
+### the python way
+
+Simply do the following:
+
+```
+python local_serve_python.py
+```
+
+and your server should be ready.
+
+## How to control model style:
+
+The embeddabel page support four options (not that in the following, pointy bracket shoud be ignored):
+1. `moleculesCount`: Special property, not supported natively by JSmol, but it can be used by Lab to set number of jsmol applets. However it can be set ONLY using hash, can't be changed dynamically later.
+
+2. `molecule=<string>`: Special property, not supported natively by JSmol, but it can be used by Lab to load a molecule model. Can use hyperlink.
+
+3. `Controllable=<yes/no>`: Can the plot be controlled by user?
+
+4. `supercell=<N,N,N>`: make a supercell of size `N x N x N`, `N` should be a integer.
+
+5. `modaixs=<yes/no>`: modify axes so that they are more prominent.
+
+6. `<Name>=<Value>`: will get pass on to JSmol's console using "set <Name> <Value>".
+
 
 ## Working on Lab interactive
 
