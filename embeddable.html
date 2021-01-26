@@ -176,7 +176,7 @@ function setProperty(name, value) {
       execJsmolScript(appletId, 'load ' + value);
       return;
     case 'controllable':
-        if(value){
+        if(value == "yes"){
           $('#overlay').hide();
         } else {
           $('#overlay').show();
@@ -185,22 +185,22 @@ function setProperty(name, value) {
     case 'supercell':
       execJsmolScript(appletId, "load '' " + '{'+value.split(",").join(" ")+'}');
     case 'modaxis':
-      // execJsmolScript(appletId, 'drew delete' );
-      // execJsmolScript(appletId, 'draw ID "xaxis" diameter 0.15 VECTOR {0 0 0} {2 0 0}">X"' );
-      // execJsmolScript(appletId, 'draw ID "xaxis" fill noMesh noDots notFrontOnly fullylit' );
-      // execJsmolScript(appletId, 'color draw opaque [xff0000]' );
-      // execJsmolScript(appletId, 'draw ID "yaxis" diameter 0.15 VECTOR {0 0 0} {0 2 0}">Y"' );
-      // execJsmolScript(appletId, 'draw ID "yaxis" fill noMesh noDots notFrontOnly fullylit' );
-      // execJsmolScript(appletId, 'color draw opaque [x008000]' );
-      // execJsmolScript(appletId, 'draw ID "zaxis" diameter 0.15 VECTOR {0 0 0} {0 0 2}">Z"' );
-      // execJsmolScript(appletId, 'draw ID "zaxis" fill noMesh noDots notFrontOnly fullylit' );
-      // execJsmolScript(appletId, 'color draw opaque [x0000ff]' );
-      // execJsmolScript(appletId, 'axes CENTER {-1,-1,-1}' );
-      execJsmolScript(appletId, 'axes scale 1' );
-      execJsmolScript(appletId, 'axes 5' );
-      execJsmolScript(appletId, 'font axes 30 SansSerif Bold' );
-
-
+        if(value == "yes"){
+          // execJsmolScript(appletId, 'drew delete' );
+          // execJsmolScript(appletId, 'draw ID "xaxis" diameter 0.15 VECTOR {0 0 0} {2 0 0}">X"' );
+          // execJsmolScript(appletId, 'draw ID "xaxis" fill noMesh noDots notFrontOnly fullylit' );
+          // execJsmolScript(appletId, 'color draw opaque [xff0000]' );
+          // execJsmolScript(appletId, 'draw ID "yaxis" diameter 0.15 VECTOR {0 0 0} {0 2 0}">Y"' );
+          // execJsmolScript(appletId, 'draw ID "yaxis" fill noMesh noDots notFrontOnly fullylit' );
+          // execJsmolScript(appletId, 'color draw opaque [x008000]' );
+          // execJsmolScript(appletId, 'draw ID "zaxis" diameter 0.15 VECTOR {0 0 0} {0 0 2}">Z"' );
+          // execJsmolScript(appletId, 'draw ID "zaxis" fill noMesh noDots notFrontOnly fullylit' );
+          // execJsmolScript(appletId, 'color draw opaque [x0000ff]' );
+          // execJsmolScript(appletId, 'axes CENTER {-1,-1,-1}' );
+          execJsmolScript(appletId, 'axes scale 1' );
+          execJsmolScript(appletId, 'axes 5' );
+          execJsmolScript(appletId, 'font axes 30 SansSerif Bold' );
+        } else {}
     default:
       execJsmolScript(appletId, 'set ' + propName + ' ' + value);
   }
