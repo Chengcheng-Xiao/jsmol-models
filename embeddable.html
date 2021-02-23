@@ -198,9 +198,11 @@ function setProperty(name, value) {
           // execJsmolScript(appletId, 'color draw opaque [x0000ff]' );
           // execJsmolScript(appletId, 'axes CENTER {-1,-1,-1}' );
           execJsmolScript(appletId, 'axes scale 1' );
-          execJsmolScript(appletId, 'axes 5' );
+          execJsmolScript(appletId, 'axes 3' );
           execJsmolScript(appletId, 'font axes 30 SansSerif Bold' );
         } else {}
+    case 'generic':
+      execJsmolScript(appletId, value.split(",").join(" "));
     default:
       execJsmolScript(appletId, 'set ' + propName + ' ' + value);
   }
@@ -266,3 +268,4 @@ function structureModified (a, b) {
   <div id="overlay"></div>
 </body>
 </html>
+
